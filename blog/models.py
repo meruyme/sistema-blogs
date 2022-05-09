@@ -40,8 +40,8 @@ class User(AbstractBaseUser):
 
 
 class Post(models.Model):
-    titulo = models.CharField(max_length=300)
-    conteudo = models.TextField()
+    titulo = models.CharField(max_length=300, verbose_name='Título')
+    conteudo = models.TextField(verbose_name='Conteúdo')
     autor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='posts')
     curtidas = models.IntegerField(default=0)
 
@@ -50,5 +50,5 @@ class Post(models.Model):
 
 
 class Comentario(models.Model):
-    nome_usuario = models.CharField(max_length=255)
-    conteudo = models.CharField(max_length=500)
+    nome_usuario = models.CharField(max_length=255, verbose_name='Nome')
+    conteudo = models.CharField(max_length=500, verbose_name='Conteúdo')
