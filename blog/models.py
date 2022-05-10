@@ -43,7 +43,7 @@ class Post(models.Model):
     titulo = models.CharField(max_length=300, verbose_name='Título')
     conteudo = models.TextField(verbose_name='Conteúdo')
     autor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='posts')
-    curtidas = models.IntegerField(default=0)
+    criado_em = models.DateTimeField(auto_now_add=True, auto_now=False)
 
     def __str__(self):
         return self.titulo
@@ -52,3 +52,8 @@ class Post(models.Model):
 class Comentario(models.Model):
     nome_usuario = models.CharField(max_length=255, verbose_name='Nome')
     conteudo = models.CharField(max_length=500, verbose_name='Conteúdo')
+    criado_em = models.DateTimeField(auto_now_add=True, auto_now=False)
+
+    class Meta:
+        verbose_name = "Comentário"
+        verbose_name_plural = "Comentários"
