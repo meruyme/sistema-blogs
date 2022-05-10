@@ -1,0 +1,59 @@
+.asteriskField{
+    display: none;
+}
+
+label{
+    font-weight: bold;
+    color: #53507A;
+}
+
+.title {
+    text-align: left;
+    color: #53507A;
+    margin-bottom: 10px;
+}
+
+.home {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.background-home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 20px;
+    background-color: #D3E7F7;
+    background-size: cover;
+    width: 100%;
+}
+
+.btn{
+    background-color: #53507A;
+    border-color: #53507A;
+    color: white;
+}
+
+.btn:hover, .btn:focus, .btn:active {
+    background-color: #757294;
+    border-color: #757294;
+}
+
+.txt-truncate{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
+
+.card[data-clickable=true]{
+  cursor: pointer;
+}
+
+.txt-date-card{
+    font-size: 12px;
+    color: #7d8293;
+}
