@@ -12,7 +12,8 @@ def listar_posts(request):
     queryset = Post.objects.all()
     if request.GET:
         if form.is_valid():
-            queryset = form.filtrar().order_by('-criado_em')
+            queryset = form.filtrar()
+    queryset = queryset.order_by('-criado_em')
     posts = paginar_registros(request, queryset, 6)
     return render(request, 'listar_posts.html', locals())
 
