@@ -52,6 +52,7 @@ class Post(models.Model):
 class Comentario(models.Model):
     nome_usuario = models.CharField(max_length=255, verbose_name='Nome')
     conteudo = models.CharField(max_length=500, verbose_name='Conteúdo')
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comentarios')
     criado_em = models.DateTimeField(auto_now_add=True, auto_now=False)
 
     class Meta:
