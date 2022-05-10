@@ -9,7 +9,7 @@ O sistema tem por objetivo ser um simples blog, onde um usuário anônimo pode l
 
 ### Tecnologias
 
-O sistema foi inteiramente desenvolvida usando Python 3.7, com o framework Django 3.2.3. O banco de dados escolhido foi o PostgreSQL 13.3.
+O sistema foi inteiramente desenvolvida usando Python 3.7, com o framework Django 3.2.3. O banco de dados escolhido foi o PostgreSQL 13.3. Para o front-end, foi utilizado HTML, CSS, Bootstrap4, JavaScript e JQuery.
 
 ### Instruções de execução
 
