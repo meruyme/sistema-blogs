@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django.contrib.sites',
-
+    'bootstrap_pagination',
     'crispy_forms',
 
     'blog'
