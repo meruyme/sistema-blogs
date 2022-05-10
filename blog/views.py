@@ -23,11 +23,14 @@ def visualizar_post(request, post_id):
     except Post.DoesNotExist:
         messages.error(request, 'Post não existe.')
         return redirect('blog:listar_posts')
-    comentarios = post.comentarios.all().order_by('-criado_em')
+    queryset = post.comentarios.all().order_by('-criado_em')
+    comentarios = paginar_registros(request, queryset, 5)
 
-    form = AddComentarioForm(request.POST or None)
+    form = AddComentarioForm(post, request.POST or None)
     if request.POST:
         if form.is_valid():
             form.save()
+            messages.success(request, 'Comentário adicionado com sucesso!')
+            return redirect('blog:visualizar_post', post_id=post.id)
     return render(request, 'visualizar_post.html', locals())
 

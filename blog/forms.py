@@ -26,3 +26,21 @@ class AddComentarioForm(forms.ModelForm):
     class Meta:
         model = Comentario
         fields = ['nome_usuario', 'conteudo']
+
+        widgets = {
+            'conteudo': forms.Textarea(attrs={'rows': 3})
+        }
+        help_texts = {
+            'conteudo': '0/500 caracteres'
+        }
+
+    def __init__(self, post, *args, **kwargs):
+        super(AddComentarioForm, self).__init__(*args, **kwargs)
+        self.post = post
+
+    def save(self, commit=True):
+        comentario = super(AddComentarioForm, self).save(commit=False)
+        comentario.post = self.post
+        if commit:
+            comentario.save()
+        return comentario

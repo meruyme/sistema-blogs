@@ -15,24 +15,26 @@
 
 <body>
     <div class="home background-home">
-            <div class="messages">
-                    {% for message in messages %}
-                        {% if message.tags == "info" %}
-                            <div class="alert alert-primary" id="message_container">
-                                {{ message }}
-                            </div>
-                        {% elif message.tags == "error" %}
-                            <div class="alert alert-danger" id="message_container">
-                                {{ message }}
-                            </div>
-                        {% elif message.tags == "success" %}
-                            <div class="alert alert-success" id="message_container">
-                                {{ message }}
-                            </div>
-                        {% endif %}
-                    {% endfor %}
+            <div class="container">
+                <div>
+                        {% for message in messages %}
+                            {% if message.tags == "info" %}
+                                <div class="alert alert-primary" id="message_container">
+                                    {{ message }}
+                                </div>
+                            {% elif message.tags == "error" %}
+                                <div class="alert alert-danger" id="message_container">
+                                    {{ message }}
+                                </div>
+                            {% elif message.tags == "success" %}
+                                <div class="alert alert-success" id="message_container">
+                                    {{ message }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                </div>
+                {% block content %}{% endblock %}
             </div>
-            {% block content %}{% endblock %}
     </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"

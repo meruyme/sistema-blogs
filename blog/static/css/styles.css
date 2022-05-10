@@ -30,11 +30,6 @@ label{
     width: 100%;
 }
 
-.text-bottom {
-    padding-top: 15px;
-    text-align: center
-}
-
 .btn{
     background-color: #53507A;
     border-color: #53507A;
@@ -42,12 +37,8 @@ label{
 }
 
 .btn:hover, .btn:focus, .btn:active {
-    background-color: #88b5df;
-    border-color: #88b5df;
-}
-
-.messages {
-    margin: 10px;
+    background-color: #757294;
+    border-color: #757294;
 }
 
 .txt-truncate{
