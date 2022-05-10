@@ -30,6 +30,12 @@ label{
     width: 100%;
 }
 
+.txt-no-results{
+    text-align: center;
+    color: #7d8293;
+    margin-bottom: 20px;
+}
+
 .btn{
     background-color: #53507A;
     border-color: #53507A;
